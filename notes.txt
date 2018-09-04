@@ -1,0 +1,17 @@
+Expectations
+------------
+ECMAScript - 
+ES6 - ES2015
+ES7 - ES2016
+ES8 - ES2017
+ES9 - ES2018
+
+TS
+--
+
+Type annotation
+
+
+tsc --init
+
+tsc -w
