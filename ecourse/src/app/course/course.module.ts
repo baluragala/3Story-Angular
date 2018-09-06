@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, InjectionToken } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { CourseListComponent } from "./course-list/course-list.component";
 import { CourseListItemComponent } from "./course-list-item/course-list-item.component";
@@ -7,6 +7,9 @@ import { AddCourseTdComponent } from "./add-course-td/add-course-td.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddCourseRfComponent } from "./add-course-rf/add-course-rf.component";
 import { CourseService } from "./course.service";
+import { Coursev2Service } from "./coursev2.service";
+
+export const FACTORY_TOKEN = new InjectionToken<string>("FACTORY_TOKEN");
 
 @NgModule({
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
@@ -16,7 +19,19 @@ import { CourseService } from "./course.service";
     AddCourseTdComponent,
     AddCourseRfComponent
   ],
-  providers: [CourseService],
+  providers: [
+    { provide: CourseService, useClass: Coursev2Service },
+    {
+      provide: "API_KEY",
+      useValue: "fds8678962uhfd"
+    },
+    {
+      provide: "FACTORY_TOKEN",
+      useFactory: function() {
+        return { message: "token from factory" };
+      }
+    }
+  ],
   exports: [CourseListComponent, AddCourseTdComponent, AddCourseRfComponent]
 })
 export class CourseModule {}
