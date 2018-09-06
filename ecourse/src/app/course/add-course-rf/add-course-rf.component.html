@@ -1,4 +1,5 @@
 <div>
+  <button (click)="load()">Load</button>
   <form [formGroup]="addCourseForm" (submit)="onSubmit()">
 
     <div *ngIf="isFormSubmitted==true">
