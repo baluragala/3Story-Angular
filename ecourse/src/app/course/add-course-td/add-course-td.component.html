@@ -1,0 +1,40 @@
+<div>
+  <form #addCourseForm="ngForm" (submit)="onSubmit(addCourseForm)">
+
+    <div *ngIf="addCourseForm?.submitted==true">
+      <!-- <p>debug:</p>{{titleRef?.errors | json}} -->
+      <p class="error" *ngIf="titleRef?.errors?.required">
+        Title is required
+      </p>
+      <p class="error" *ngIf="titleRef?.errors?.minlength">
+          Title must be atleast {{titleRef?.errors?.minlength.requiredLength}}, but you have provided only {{titleRef?.errors?.minlength.actualLength}} characters
+      </p>
+    </div>
+
+    <label for="title">Title</label>
+    <input type="text" name="title" placeholder="Course Title" [(ngModel)]="title" required minlength="10" maxlength="30" #titleRef="ngModel"/>
+    <p>debug:</p>{{titleRef?.errors | json}}
+    <p class="error" *ngIf="titleRef?.dirty && titleRef?.errors?.required">
+      Title is required
+    </p>
+    <p class="error" *ngIf="titleRef?.dirty && titleRef?.errors?.minlength">
+        Title must be atleast {{titleRef?.errors?.minlength.requiredLength}}, but you have provided only {{titleRef?.errors?.minlength.actualLength}} characters
+    </p>
+    
+    <label for="price">Price</label>
+    <input type="number" name="price" placeholder="Course Price" [(ngModel)]="price"/>
+    
+    <label for="modeOfDelivery">Mode Of Delivery</label>
+    <input type="radio" name="modeOfDelivery" [(ngModel)]="modeOfDelivery" value="ONLINE"/> <label>ONLINE</label>
+    <input type="radio" name="modeOfDelivery" [(ngModel)]="modeOfDelivery" value="CLASSROOM"/> <label>CLASSROOM</label>
+  <br/>
+    <label for="category">Category</label>
+    <select name="category" [(ngModel)]="category">
+      <option value="Mobile Development">Mobile Development</option>
+      <option value="Front end Development">Front end Development</option>
+      <option value="Api Development">Api Development</option>
+      <option value="Fullstack Development">Fullstack Development</option>
+    </select>
+   <input type="submit" value="ADD COURSE"/>
+  </form>
+</div>
