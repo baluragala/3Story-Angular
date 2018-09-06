@@ -1,0 +1,37 @@
+<div>
+  <form [formGroup]="addCourseForm" (submit)="onSubmit()">
+
+    <div *ngIf="isFormSubmitted==true">
+
+      <!-- <p>debug:</p>{{titleRef?.errors | json}} -->
+      <p class="error" *ngIf="addCourseForm?.controls.title.errors?.required">
+        Title is required
+      </p>
+      <p class="error" *ngIf="addCourseForm?.controls.title.errors?.minlength">
+        Title must be atleast {{addCourseForm?.controls.title.errors?.minlength.requiredLength}}, but you have provided
+        only
+        {{addCourseForm?.controls.title.errors?.minlength.actualLength}} characters
+      </p>
+    </div>
+
+    <label for="title">Title</label>
+    <input type="text" name="title" placeholder="Course Title" formControlName="title" />
+
+    <label for="price">Price</label>
+    <input type="number" name="price" placeholder="Course Price" formControlName="price" />
+
+    <label for="modeOfDelivery">Mode Of Delivery</label>
+    <input type="radio" name="modeOfDelivery" value="ONLINE" formControlName="modeOfDelivery" /> <label>ONLINE</label>
+    <input type="radio" name="modeOfDelivery" value="CLASSROOM" formControlName="modeOfDelivery" /> <label>CLASSROOM</label>
+    <br />
+
+    <label for="category">Category</label>
+    <select name="category" formControlName="category">
+      <option value="Mobile Development">Mobile Development</option>
+      <option value="Front end Development">Front end Development</option>
+      <option value="Api Development">Api Development</option>
+      <option value="Fullstack Development">Fullstack Development</option>
+    </select>
+    <input type="submit" value="ADD COURSE" />
+  </form>
+</div>

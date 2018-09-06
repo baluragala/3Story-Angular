@@ -4,15 +4,17 @@ import { CourseListComponent } from "./course-list/course-list.component";
 import { CourseListItemComponent } from "./course-list-item/course-list-item.component";
 import { SharedModule } from "../shared/shared.module";
 import { AddCourseTdComponent } from "./add-course-td/add-course-td.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AddCourseRfComponent } from "./add-course-rf/add-course-rf.component";
 
 @NgModule({
-  imports: [CommonModule, SharedModule, FormsModule],
+  imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
   declarations: [
     CourseListComponent,
     CourseListItemComponent,
-    AddCourseTdComponent
+    AddCourseTdComponent,
+    AddCourseRfComponent
   ],
-  exports: [CourseListComponent, AddCourseTdComponent]
+  exports: [CourseListComponent, AddCourseTdComponent, AddCourseRfComponent]
 })
 export class CourseModule {}
