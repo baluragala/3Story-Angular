@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header.component";
 import { SharedModule } from "./shared/shared.module";
 import { CourseModule } from "./course/course.module";
+import { CourseService } from "./course/course.service";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],

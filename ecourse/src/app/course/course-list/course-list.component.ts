@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ICourse } from "../ICourse";
+import { CourseService } from "../course.service";
 
 @Component({
   selector: "eco-course-list",
@@ -7,52 +9,13 @@ import { Component, OnInit } from "@angular/core";
 })
 export class CourseListComponent implements OnInit {
   lastOptedCourseName = "N/A";
-  courses: Array<ICourse> = [
-    {
-      title: "Angular 6",
-      duration: 20,
-      price: 100,
-      modeOfDelivery: "ONLINE",
-      author: "ZEOLEARN",
-      category: "Front End Development"
-    },
-    {
-      title: "React 16",
-      duration: 24,
-      price: 200,
-      modeOfDelivery: "ONLINE",
-      author: "KHUT",
-      category: "Front End Development"
-    },
-    {
-      title: "React 17",
-      duration: 0,
-      price: 0,
-      modeOfDelivery: "ONLINE",
-      author: "KHUT",
-      category: "Front End Development"
-    },
-    {
-      title: "Tensor Flow",
-      duration: 20,
-      price: 300,
-      modeOfDelivery: "ONLINE",
-      author: "ZEOLEARN",
-      category: "AI"
-    },
-    {
-      title: "Ionic 4",
-      duration: 16,
-      price: 80,
-      modeOfDelivery: "ONLINE",
-      author: "ZEOLEARN",
-      category: "Mobile Development"
-    }
-  ];
+  courses: Array<ICourse>;
 
-  constructor() {}
+  constructor(public service: CourseService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.courses = this.service.getCourses();
+  }
 
   handleClick(e) {
     console.log(e);

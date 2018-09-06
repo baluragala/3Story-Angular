@@ -1,4 +1,4 @@
-interface ICourse {
+export interface ICourse {
   title: string;
   duration: number;
   modeOfDelivery: string;

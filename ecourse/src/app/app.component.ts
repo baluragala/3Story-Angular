@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from "@angular/core";
+import { CourseService } from "./course/course.service";
 
 @Component({
   selector: "eco-root",

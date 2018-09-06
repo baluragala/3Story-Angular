@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { ICourse } from "../ICourse";
 
 @Component({
   selector: "eco-course-list-item",

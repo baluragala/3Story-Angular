@@ -6,6 +6,7 @@ import { SharedModule } from "../shared/shared.module";
 import { AddCourseTdComponent } from "./add-course-td/add-course-td.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddCourseRfComponent } from "./add-course-rf/add-course-rf.component";
+import { CourseService } from "./course.service";
 
 @NgModule({
   imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
@@ -15,6 +16,7 @@ import { AddCourseRfComponent } from "./add-course-rf/add-course-rf.component";
     AddCourseTdComponent,
     AddCourseRfComponent
   ],
+  providers: [CourseService],
   exports: [CourseListComponent, AddCourseTdComponent, AddCourseRfComponent]
 })
 export class CourseModule {}
