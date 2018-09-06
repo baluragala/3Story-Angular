@@ -35,3 +35,34 @@ Course
 
 CourseList -> ng g c course/course-list --no-spec
   CourseListItem -> ng g c course/course-list-item --no-spec 
+
+angular building blocks
+  - modules
+    root or app
+    feature module ( shared, course)
+  - components
+    - template
+      - inline ( template)
+      - external ( templateUrl)
+      Styles
+        - inline (styles)
+        - external (styleUrls)
+    encapsulation
+
+    - class
+    - metadata @component
+  -template Synta
+    {{}}
+    []
+    ()
+    [()]
+  
+  - directives
+    strutual
+      ngFor
+      ngIf
+    attribye
+      ngClass
+      ngStyle
+
+    pipes

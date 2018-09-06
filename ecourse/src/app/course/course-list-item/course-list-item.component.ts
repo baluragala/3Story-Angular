@@ -20,6 +20,12 @@ export class CourseListItemComponent implements OnInit {
 
   modeStyle: any = { "background-color": "lightgrey" };
 
+  delayValue = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve("promise resolved");
+    }, 5000);
+  });
+
   @Output()
   courseOpted: EventEmitter<ICourse> = new EventEmitter();
 

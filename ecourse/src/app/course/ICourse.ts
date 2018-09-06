@@ -4,4 +4,5 @@ interface ICourse {
   modeOfDelivery: string;
   author: string;
   category: string;
+  price?: number;
 }
