@@ -1,0 +1,9 @@
+<div [ngClass]="{item:true, nodelivery:course.duration==0}" (click)="courseClicked(course)">
+  <h2>{{index}}. {{course.title}} by {{course.author}}</h2>
+  <h3 [ngStyle]="modeStyle" *ngIf="course.duration > 0 else nodelivery">Mode : {{course.modeOfDelivery}}</h3>
+  <h2>Category: {{course.category}}</h2>
+</div>
+
+<ng-template #nodelivery>
+  <h3>FUTURE COURSE</h3>
+</ng-template>

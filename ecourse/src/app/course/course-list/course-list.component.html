@@ -1,0 +1,13 @@
+<h3>Courses</h3>
+<h4>Total Available Courses:{{courses.length}}</h4>
+<p>Lastet Choice: {{lastOptedCourseName}}</p>
+<!-- <eco-course-list-item [course]="courses[0]" (courseOpted)="onCourseOpted($event)"></eco-course-list-item>
+<eco-course-list-item [course]="courses[1]" (courseOpted)="onCourseOpted($event)"></eco-course-list-item>
+<eco-course-list-item [course]="courses[2]" (courseOpted)="onCourseOpted($event)"></eco-course-list-item>
+<eco-course-list-item [course]="courses[3]" (courseOpted)="onCourseOpted($event)"></eco-course-list-item> -->
+
+<eco-course-list-item *ngFor="let c of courses;let i=index" [course]="c" [index]="i+1" (courseOpted)="onCourseOpted($event)">
+</eco-course-list-item>
+
+
+<!-- <button [title]="'Click me, I fires'" (click)="handleClick($event)">Click Me!!</button> -->

@@ -1,0 +1,10 @@
+.item {
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 10px;
+  background-color: beige;
+}
+
+.nodelivery {
+  background-color: lightpink;
+}

@@ -1,0 +1,37 @@
+Day 1
+-----
+JS vs TS
+Install TS
+tsc 
+tsconfig.json
+types -> string, number, boolean, array, object || enum, void, union, tuple
+inference
+annotation
+functions
+  - mandatory, optional, default (es6)
+  - arrow
+interfaces
+classes
+modules
+decorators
+
+es6
+---
+scoping - let, const (var es5)
+desctructuring
+template literals
+
+Angular
+-------
+@angular/cli -> ng
+ng new ecourse
+
+Day 2
+-----
+
+
+Course
+  ng g m course --no-spec
+
+CourseList -> ng g c course/course-list --no-spec
+  CourseListItem -> ng g c course/course-list-item --no-spec 
