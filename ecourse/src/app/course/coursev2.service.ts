@@ -11,6 +11,15 @@ export class Coursev2Service {
 
   getCourses() {
     return this.http.get<Array<ICourse>>("http://localhost:3000/courses");
+    // {
+    //   headers: {
+    //     "X-UserId": "ng"
+    //   },
+    //   params: {
+    //     _page: "1",
+    //     _limit: "3"
+    //   }
+    // }
   }
 
   getCourseById(id: number): Observable<ICourse> {

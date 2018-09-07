@@ -11,15 +11,9 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class CourseListComponent implements OnInit {
   lastOptedCourseName = "N/A";
-  courses: Array<ICourse>;
+  courses: Array<ICourse> = [];
 
-  constructor(
-    public service: CourseService,
-    @Inject("API_KEY") private key: string,
-    @Inject("FACTORY_TOKEN") private token: string,
-    private route: ActivatedRoute
-  ) {
-    console.log(this.key, token);
+  constructor(public service: CourseService, private route: ActivatedRoute) {
     console.log(this.route.snapshot.queryParams);
   }
 

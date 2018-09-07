@@ -83,3 +83,18 @@ angular building blocks
     
     routing
       RouterModule
+
+
+      -----
+
+unit testing
+------------
+1. Suite -> all collection of test cases
+2. Spec -> single independent test
+3. Assertion library
+4. matchers 
+
+test runner
+
+
+
