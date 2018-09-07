@@ -1,6 +1,6 @@
 <div [ngClass]="{item:true, nodelivery:course.duration==0}" (click)="courseClicked(course)">
   <p>{{delayValue| async }}</p>
-  <h2><a [routerLink]="['detail',course.id]">{{index}}. {{course.title | titlecase }} by {{course.author}}</a></h2>
+  <h2><a [routerLink]="['/detail',course.id]">{{index}}. {{course.title | titlecase }} by {{course.author}}</a></h2>
   <h3>{{course.duration | duration}}</h3>
   <h1>{{course.price | currency:USD:false}}</h1>
   <h3 [ngStyle]="modeStyle" *ngIf="course.duration > 0 else nodelivery">Mode : {{course.modeOfDelivery}}</h3>

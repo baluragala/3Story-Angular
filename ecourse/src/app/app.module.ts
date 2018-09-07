@@ -24,7 +24,7 @@ import { CourseDetailComponent } from "./course/course-detail/course-detail.comp
       { path: "list", component: CourseListComponent },
       { path: "add-td", component: AddCourseTdComponent },
       { path: "add-rf", component: AddCourseRfComponent },
-      { path: "list/detail/:cid", component: CourseDetailComponent },
+      { path: "detail/:cid", component: CourseDetailComponent },
       { path: "**", component: NotFoundComponent }
     ])
   ],
