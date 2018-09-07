@@ -66,3 +66,20 @@ angular building blocks
       ngStyle
 
     pipes
+
+    Day 3
+    -----
+    pipes
+     bultin pipes
+     custom
+
+    forms
+      td
+      rf
+    DI (providers)
+      class
+      value
+      factory
+    
+    routing
+      RouterModule

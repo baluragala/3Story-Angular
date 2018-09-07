@@ -10,6 +10,7 @@ import { RouterModule } from "@angular/router";
 import { CourseListComponent } from "./course/course-list/course-list.component";
 import { AddCourseTdComponent } from "./course/add-course-td/add-course-td.component";
 import { AddCourseRfComponent } from "./course/add-course-rf/add-course-rf.component";
+import { NotFoundComponent } from "./shared/not-found/not-found.component";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -18,9 +19,11 @@ import { AddCourseRfComponent } from "./course/add-course-rf/add-course-rf.compo
     SharedModule,
     CourseModule,
     RouterModule.forRoot([
+      { path: "", component: CourseListComponent, pathMatch: "full" },
       { path: "list", component: CourseListComponent },
       { path: "add-td", component: AddCourseTdComponent },
-      { path: "add-rf", component: AddCourseRfComponent }
+      { path: "add-rf", component: AddCourseRfComponent },
+      { path: "**", component: NotFoundComponent }
     ])
   ],
   providers: [],
