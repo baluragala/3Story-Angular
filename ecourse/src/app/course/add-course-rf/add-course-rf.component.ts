@@ -5,6 +5,9 @@ import {
   Validators,
   FormBuilder
 } from "@angular/forms";
+import { CourseService } from "../course.service";
+import { core } from "@angular/compiler";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "eco-add-course-rf",
@@ -15,7 +18,11 @@ export class AddCourseRfComponent implements OnInit {
   addCourseForm: FormGroup;
   isFormSubmitted: boolean = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    public service: CourseService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     // this.addCourseForm = new FormGroup({
@@ -47,6 +54,10 @@ export class AddCourseRfComponent implements OnInit {
 
   onSubmit() {
     this.isFormSubmitted = true;
+    this.service.addCourse(this.addCourseForm.value).subscribe(c => {
+      alert("Course added successfully with id" + c.id);
+      this.router.navigate(["/list"]);
+    });
   }
 
   load() {

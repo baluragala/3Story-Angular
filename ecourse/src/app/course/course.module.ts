@@ -11,6 +11,7 @@ import { Coursev2Service } from "./coursev2.service";
 import { CourseDetailComponent } from "./course-detail/course-detail.component";
 import { RouterModule } from "@angular/router";
 import { COURSE_ROUTES } from "./course.routes";
+import { HttpClientModule } from "@angular/common/http";
 
 export const FACTORY_TOKEN = new InjectionToken<string>("FACTORY_TOKEN");
 
@@ -20,7 +21,8 @@ export const FACTORY_TOKEN = new InjectionToken<string>("FACTORY_TOKEN");
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(COURSE_ROUTES)
+    RouterModule.forChild(COURSE_ROUTES),
+    HttpClientModule
   ],
   declarations: [
     CourseListComponent,

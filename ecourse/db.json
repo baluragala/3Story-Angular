@@ -1,0 +1,90 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "courses": [
+    {
+      "id": 1,
+      "title": "Angular 6-2",
+      "duration": 20,
+      "price": 100,
+      "modeOfDelivery": "ONLINE",
+      "author": "ZEOLEARN",
+      "category": "Front End Development"
+    },
+    {
+      "id": 2,
+      "title": "React 16-2",
+      "duration": 24,
+      "price": 200,
+      "modeOfDelivery": "ONLINE",
+      "author": "KHUT",
+      "category": "Front End Development"
+    },
+    {
+      "id": 3,
+      "title": "React 17-2",
+      "duration": 0,
+      "price": 0,
+      "modeOfDelivery": "ONLINE",
+      "author": "KHUT",
+      "category": "Front End Development"
+    },
+    {
+      "id": 4,
+      "title": "Tensor Flow-2",
+      "duration": 20,
+      "price": 300,
+      "modeOfDelivery": "ONLINE",
+      "author": "ZEOLEARN",
+      "category": "AI"
+    },
+    {
+      "id": 5,
+      "title": "Ionic 4-2",
+      "duration": 16,
+      "price": 80,
+      "modeOfDelivery": "ONLINE",
+      "author": "ZEOLEARN",
+      "category": "Mobile Development"
+    },
+    {
+      "title": "VUEJS",
+      "price": 300,
+      "modeOfDelivery": "CLASSROOM",
+      "category": "Front end Development",
+      "id": 6
+    },
+    {
+      "title": "Open CV programming with android",
+      "price": 3000,
+      "modeOfDelivery": "ONLINE",
+      "category": "Api Development",
+      "id": 7
+    }
+  ]
+}

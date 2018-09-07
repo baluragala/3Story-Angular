@@ -1,58 +1,22 @@
 import { Injectable } from "@angular/core";
 import { ICourse } from "./ICourse";
 import { CourseModule } from "./course.module";
+
+import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
 @Injectable()
 export class CourseService {
-  private courses: Array<ICourse> = [
-    {
-      title: "Angular 6",
-      duration: 20,
-      price: 100,
-      modeOfDelivery: "ONLINE",
-      author: "ZEOLEARN",
-      category: "Front End Development"
-    },
-    {
-      title: "React 16",
-      duration: 24,
-      price: 200,
-      modeOfDelivery: "ONLINE",
-      author: "KHUT",
-      category: "Front End Development"
-    },
-    {
-      title: "React 17",
-      duration: 0,
-      price: 0,
-      modeOfDelivery: "ONLINE",
-      author: "KHUT",
-      category: "Front End Development"
-    },
-    {
-      title: "Tensor Flow",
-      duration: 20,
-      price: 300,
-      modeOfDelivery: "ONLINE",
-      author: "ZEOLEARN",
-      category: "AI"
-    },
-    {
-      title: "Ionic 4",
-      duration: 16,
-      price: 80,
-      modeOfDelivery: "ONLINE",
-      author: "ZEOLEARN",
-      category: "Mobile Development"
-    }
-  ];
-  constructor() {}
+  constructor(public http: HttpClient) {}
 
   getCourses() {
-    return this.courses;
+    return this.http.get<Array<ICourse>>("http://localhost:3000/courses");
   }
 
-  getCourseById(id: any): ICourse {
-    const course = this.courses.find(c => c.id === id);
-    return course;
+  getCourseById(id: number): Observable<ICourse> {
+    return this.http.get<ICourse>(`http://localhost:3000/courses/${id}`);
+  }
+
+  addCourse(course: ICourse) {
+    return this.http.post<ICourse>("http://localhost:3000/courses", course);
   }
 }
