@@ -51,8 +51,8 @@ export class CourseService {
     return this.courses;
   }
 
-  getCourseById(id: number): ICourse {
-    const course = this.courses.find(c => c.id == id);
+  getCourseById(id: any): ICourse {
+    const course = this.courses.find(c => c.id === id);
     return course;
   }
 }

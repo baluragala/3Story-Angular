@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, InjectionToken } from "@angular/core";
 import { ICourse } from "../ICourse";
 import { CourseService } from "../course.service";
 import { FACTORY_TOKEN } from "../course.module";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "eco-course-list",
@@ -15,9 +16,11 @@ export class CourseListComponent implements OnInit {
   constructor(
     public service: CourseService,
     @Inject("API_KEY") private key: string,
-    @Inject("FACTORY_TOKEN") private token: string
+    @Inject("FACTORY_TOKEN") private token: string,
+    private route: ActivatedRoute
   ) {
     console.log(this.key, token);
+    console.log(this.route.snapshot.queryParams);
   }
 
   ngOnInit() {

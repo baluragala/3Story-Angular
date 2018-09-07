@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CourseService } from "../course.service";
 import { ICourse } from "../ICourse";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "eco-course-detail",
@@ -10,12 +10,20 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class CourseDetailComponent implements OnInit {
   course: ICourse;
-  constructor(public service: CourseService, public route: ActivatedRoute) {
+  constructor(
+    public service: CourseService,
+    public route: ActivatedRoute,
+    public router: Router
+  ) {
     console.log(route);
   }
 
   ngOnInit() {
-    let id = this.route.snapshot.params["cid"];
+    let id: string = this.route.snapshot.params["cid"];
     this.course = this.service.getCourseById(id);
+  }
+
+  goToCourses() {
+    this.router.navigate(["/list"], { queryParams: { page: 1, limit: 10 } });
   }
 }

@@ -21,10 +21,6 @@ import { CourseDetailComponent } from "./course/course-detail/course-detail.comp
     CourseModule,
     RouterModule.forRoot([
       { path: "", component: CourseListComponent, pathMatch: "full" },
-      { path: "list", component: CourseListComponent },
-      { path: "add-td", component: AddCourseTdComponent },
-      { path: "add-rf", component: AddCourseRfComponent },
-      { path: "detail/:cid", component: CourseDetailComponent },
       { path: "**", component: NotFoundComponent }
     ])
   ],
