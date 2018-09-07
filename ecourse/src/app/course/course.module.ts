@@ -8,16 +8,25 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AddCourseRfComponent } from "./add-course-rf/add-course-rf.component";
 import { CourseService } from "./course.service";
 import { Coursev2Service } from "./coursev2.service";
+import { CourseDetailComponent } from "./course-detail/course-detail.component";
+import { RouterModule } from "@angular/router";
 
 export const FACTORY_TOKEN = new InjectionToken<string>("FACTORY_TOKEN");
 
 @NgModule({
-  imports: [CommonModule, SharedModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild([])
+  ],
   declarations: [
     CourseListComponent,
     CourseListItemComponent,
     AddCourseTdComponent,
-    AddCourseRfComponent
+    AddCourseRfComponent,
+    CourseDetailComponent
   ],
   providers: [
     { provide: CourseService, useClass: Coursev2Service },
@@ -32,6 +41,11 @@ export const FACTORY_TOKEN = new InjectionToken<string>("FACTORY_TOKEN");
       }
     }
   ],
-  exports: [CourseListComponent, AddCourseTdComponent, AddCourseRfComponent]
+  exports: [
+    CourseListComponent,
+    AddCourseTdComponent,
+    AddCourseRfComponent,
+    CourseDetailComponent
+  ]
 })
 export class CourseModule {}

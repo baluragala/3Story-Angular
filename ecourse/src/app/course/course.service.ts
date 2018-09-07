@@ -50,4 +50,9 @@ export class CourseService {
   getCourses() {
     return this.courses;
   }
+
+  getCourseById(id: number): ICourse {
+    const course = this.courses.find(c => c.id == id);
+    return course;
+  }
 }

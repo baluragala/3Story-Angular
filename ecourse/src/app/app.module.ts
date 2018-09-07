@@ -11,6 +11,7 @@ import { CourseListComponent } from "./course/course-list/course-list.component"
 import { AddCourseTdComponent } from "./course/add-course-td/add-course-td.component";
 import { AddCourseRfComponent } from "./course/add-course-rf/add-course-rf.component";
 import { NotFoundComponent } from "./shared/not-found/not-found.component";
+import { CourseDetailComponent } from "./course/course-detail/course-detail.component";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -23,6 +24,7 @@ import { NotFoundComponent } from "./shared/not-found/not-found.component";
       { path: "list", component: CourseListComponent },
       { path: "add-td", component: AddCourseTdComponent },
       { path: "add-rf", component: AddCourseRfComponent },
+      { path: "list/detail/:cid", component: CourseDetailComponent },
       { path: "**", component: NotFoundComponent }
     ])
   ],
